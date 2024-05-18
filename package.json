@@ -5,7 +5,8 @@
   "description": "strona kursowa",
   "main": "meadowlark.js",
   "scripts": {
-    "devStart": "nodemon meadowlark.js"
+    "devStart": "nodemon meadowlark.js",
+    "test": "jest"
   },
   "author": "wrona",
   "license": "ISC",
@@ -13,5 +14,8 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

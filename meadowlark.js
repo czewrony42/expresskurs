@@ -1,6 +1,7 @@
 import dotEnv from 'dotenv/config'
 import express from 'express'
-import quotes from './src/quotes.js'
+import router from './src/routes.js'
+import adminRouter from './src/routes_admin.js'
 // import costam from "./src/midleware.js"
 const app = express()
 
@@ -9,21 +10,12 @@ const port = process.env.PORT || 3000
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 app.use(express.static('public'))
+app.use('/', router)
+
+app.use('/admin', adminRouter)
 
 // app.use(costam)
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
-app.get('/about', async (req, res) => {
-  const data = await quotes()
-  res.render('about', {cytat: data.quote})
-})
-
-app.get('/about/contact', (req, res) => {
-  res.send("oho")
-})
 
 // app.get('/json', async (req, res) => {
 //   try {
