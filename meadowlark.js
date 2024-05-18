@@ -12,13 +12,13 @@ app.use(express.static('public'))
 
 // app.use(costam)
 
-app.get('/', async (req, res) => {
-  const data = await quotes()
-  res.render('index', { cytat: data.quote })
+app.get('/', (req, res) => {
+  res.render('index')
 })
 
-app.get('/about', (req, res) => {
-  res.render('about')
+app.get('/about', async (req, res) => {
+  const data = await quotes()
+  res.render('about', {cytat: data.quote})
 })
 
 app.get('/about/contact', (req, res) => {
