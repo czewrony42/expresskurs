@@ -1,0 +1,17 @@
+{
+  "name": "meadowlark",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "strona kursowa",
+  "main": "meadowlark.js",
+  "scripts": {
+    "devStart": "nodemon meadowlark.js"
+  },
+  "author": "wrona",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
